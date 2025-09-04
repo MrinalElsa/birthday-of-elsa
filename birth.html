@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mrinalini (Mampi)’s Birthday</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; text-align: center; background: #fff0f5; color: #333; overflow-x: hidden; }
+    header { background: linear-gradient(135deg, #ff99cc, #ff66b2); color: white; padding: 50px 20px; }
+    h1 { font-size: 2.5em; margin: 0; }
+    h2 { margin: 10px 0 20px; }
+    .countdown { font-size: 1.5em; margin: 20px 0; }
+    section { padding: 30px 20px; }
+    .btn { display: inline-block; margin: 10px; padding: 12px 25px; background: #ff66b2; color: white; text-decoration: none; border-radius: 25px; }
+    .btn:hover { background: #ff3385; }
+    .slideshow-container { position: relative; max-width: 800px; margin: auto; }
+    .mySlides { display: none; }
+    .mySlides img { width: 100%; border-radius: 15px; }
+    .prev, .next { cursor: pointer; position: absolute; top: 50%; width: auto; padding: 16px; margin-top: -22px; color: white; font-weight: bold; font-size: 18px; transition: 0.6s ease; border-radius: 0 3px 3px 0; user-select: none; }
+    .next { right: 0; border-radius: 3px 0 0 3px; }
+    .prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+    .dot-container { text-align: center; margin-top: 15px; }
+    .dot { cursor: pointer; height: 15px; width: 15px; margin: 0 2px; background-color: #bbb; border-radius: 50%; display: inline-block; transition: background-color 0.6s ease; }
+    .active, .dot:hover { background-color: #717171; }
+    footer { background: #ff99cc; padding: 15px; margin-top: 20px; color: white; }
+    .music-player { margin: 20px 0; }
+    canvas#confetti-canvas, canvas#balloon-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 999; }
+
+    /* Popup */
+    #popup { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: flex; justify-content: center; align-items: center; z-index: 1000; visibility: hidden; }
+    #popup-content { background: white; padding: 30px; border-radius: 15px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); animation: popin 0.5s ease; }
+    #popup h2 { margin: 0 0 15px; color: #ff3385; }
+    #popup button { padding: 10px 20px; border: none; background: #ff66b2; color: white; border-radius: 25px; cursor: pointer; }
+    #popup button:hover { background: #ff3385; }
+    @keyframes popin { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+    /* Highlight Card */
+    .highlight-card { background: #ffe6f0; border: 3px solid #ff66b2; border-radius: 15px; padding: 25px; max-width: 700px; margin: 30px auto; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    .highlight-card h3 { color: #ff3385; font-size: 1.8em; margin-bottom: 15px; }
+    .highlight-card p { font-size: 1.1em; line-height: 1.6; }
+    .signature { margin-top: 20px; font-weight: bold; color: #ff3385; }
+  </style>
+</head>
+<body>
+  <canvas id="confetti-canvas"></canvas>
+  <canvas id="balloon-canvas"></canvas>
+
+  <div id="popup">
+    <div id="popup-content">
+      <h2>🎉 Happy Birthday Mrinalini (Mampi)! 🎂</h2>
+      <p>Welcome to the celebration page!</p>
+      <button onclick="closePopup()">Let's Celebrate 🎊</button>
+    </div>
+  </div>
+
+  <header>
+    <h1>🎉 Happy Birthday Mrinalini (Mampi)! 🎂</h1>
+    <h2> 5th Sept 2025 at 12:00 AM</h2>
+    <p> Raiganj Debinagar Kalibari</p>
+    <div class="countdown" id="countdown"></div>
+  </header>
+
+  <section class="highlight-card">
+    <h3>🎂 Special Note 🎂</h3>
+    <p>Hey dear Elsa , we have seen so many ups and downs together, 7 years and we are still in tune. May be this is the last year as a boyfriend as we are going to give our hands for togetherness still I will be a dedicated lover of yours. Happy to have you . I am extremely delighted for this day. Happy Birthday my dear beautiful beloved. This is all I have now as I am fall short of words due to the ecstatic joy. Love you. Stay healthy, stay blessed, stay mine always.</p>
+    <p class="signature">With love, your Mota. (Mrinal) ❤</p>
+  </section>
+
+  <section>
+    <h2>Gallery</h2>
+    <div class="slideshow-container">
+      <div class="mySlides"><img src="C:\birthday. html mine\images\mampi1.jpg" alt="Photo 1"></div>
+      <div class="mySlides"><img src="C:\birthday. html mine\images\mampi2.jpg" alt="Photo 2"></div>
+      <div class="mySlides"><img src="C:\birthday. html mine\images\mampi3.jpg" alt="Photo 3"></div>
+      <div class="mySlides"><img src="C:\birthday. html mine\images\mampi4.jpg" alt="Photo 4"></div>
+      <div class="mySlides"><img src="C:\birthday. html mine\images\mampi5.jpg" alt="Photo 5"></div>
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+    </div>
+    <div class="dot-container">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+    </div>
+  </section>
+
+  <section class="music-player">
+    <h2>🎵 Birthday Vibes</h2>
+    <audio id="bg-music" autoplay loop controls>
+      <source src="C:\birthday. html mine\music\tere hawale.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </section>
+
+  <footer>
+    <p>Made with ❤ for Mrinalini (Mampi)’s Birthday</p>
+  </footer>
+
+  <script>
+    // Countdown Timer
+    const countdown = document.getElementById('countdown');
+    const eventDate = new Date('September 5, 2025 00:00:00').getTime();
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+      if (distance > 0) {
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s left`;
+      } else {
+        countdown.innerHTML = "🎉 The party has started! 🎊";
+      }
+    }, 1000);
+
+    // Slideshow
+    let slideIndex = 1;
+    let slideTimeout;
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      clearTimeout(slideTimeout);
+      slideTimeout = setTimeout(function() { plusSlides(1); }, 4000);
+    }
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    // Initialize slideshow
+    showSlides(slideIndex);
+
+    // Confetti Effect
+    const confettiCanvas = document.getElementById('confetti-canvas');
+    const ctx = confettiCanvas.getContext('2d');
+    let confettis = [];
+    
+    function resizeCanvas() {
+      confettiCanvas.width = window.innerWidth;
+      confettiCanvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function Confetti() {
+      this.x = Math.random() * confettiCanvas.width;
+      this.y = Math.random() * confettiCanvas.height - confettiCanvas.height;
+      this.size = Math.random() * 8 + 4;
+      this.speed = Math.random() * 3 + 2;
+      this.color = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    }
+
+    Confetti.prototype.update = function() {
+      this.y += this.speed;
+      if (this.y > confettiCanvas.height) {
+        this.y = -10;
+        this.x = Math.random() * confettiCanvas.width;
+      }
+    }
+
+    Confetti.prototype.draw = function() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = this.color;
+      ctx.fill();
+    }
+
+    function initConfetti() {
+      for (let i = 0; i < 200; i++) {
+        confettis.push(new Confetti());
+      }
+    }
+
+    function animateConfetti() {
+      ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+      for (let i = 0; i < confettis.length; i++) {
+        confettis[i].update();
+        confettis[i].draw();
+      }
+      requestAnimationFrame(animateConfetti);
+    }
+
+    initConfetti();
+    animateConfetti();
+
+    // Balloon Effect
+    const balloonCanvas = document.getElementById('balloon-canvas');
+    const btx = balloonCanvas.getContext('2d');
+    let balloons = [];
+
+    function resizeBalloonCanvas() {
+      balloonCanvas.width = window.innerWidth;
+      balloonCanvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeBalloonCanvas);
+    resizeBalloonCanvas();
+
+    function Balloon() {
+      this.x = Math.random() * balloonCanvas.width;
+      this.y = balloonCanvas.height + Math.random() * 200;
+      this.size = Math.random() * 30 + 20;
+      this.speed = Math.random() * 1 + 0.5;
+      this.color = `hsl(${Math.random() * 360}, 70%, 60%)`;
+    }
+
+    Balloon.prototype.update = function() {
+      this.y -= this.speed;
+      if (this.y + this.size < 0) {
+        this.y = balloonCanvas.height + Math.random() * 200;
+        this.x = Math.random() * balloonCanvas.width;
+      }
+    }
+
+    Balloon.prototype.draw = function() {
+      btx.beginPath();
+      btx.ellipse(this.x, this.y, this.size * 0.6, this.size, 0, 0, Math.PI * 2);
+      btx.fillStyle = this.color;
+      btx.fill();
+      btx.beginPath();
+      btx.moveTo(this.x, this.y + this.size);
+      btx.lineTo(this.x, this.y + this.size + 20);
+      btx.strokeStyle = "#555";
+      btx.stroke();
+    }
+
+    function initBalloons() {
+      for (let i = 0; i < 25; i++) {
+        balloons.push(new Balloon());
+      }
+    }
+
+    function animateBalloons() {
+      btx.clearRect(0, 0, balloonCanvas.width, balloonCanvas.height);
+      for (let i = 0; i < balloons.length; i++) {
+        balloons[i].update();
+        balloons[i].draw();
+      }
+      requestAnimationFrame(animateBalloons);
+    }
+
+    initBalloons();
+    animateBalloons();
+
+    // Popup
+    window.onload = function() {
+      const popup = document.getElementById('popup');
+      popup.style.visibility = 'visible';
+    }
+
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
